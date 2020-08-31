@@ -16,24 +16,24 @@ global.Promise;mongoose.connect("mongodb://localhost:27017/dnd_demo");
 // specify the schema
 var characterSchema = new mongoose.Schema({
     // cInfo
-    cName: String,
-    cRace: String,
-    cClass: String,
-    cOwner: String,
+    cName: String,      // done
+    cRace: String,      // done
+    cClass: String,      // done
+    cOwner: String,      // done
     // cStats
-    cXP: Number,
-    cLevel: Number,
+    cXP: Number,      // done
+    cLevel: Number,      // done
     
     cHP: Number,
     cMaxHP: Number,
     
     cSpeed: Number,
-    cMoveCapacity: Number,
-    cCarryCapacity: Number,
+    cMoveCapacity: Number,      // done
+    cCarryCapacity: Number,      // done
 
-    cHitDice: Number,
-    cHitDieType: String,
-    cProficiencyBonus: Number,
+    cHitDice: Number,      // done
+    cHitDieType: String,      // done
+    cProficiencyBonus: Number,      // done
     cInitMod: Number,
     cPassivePerception: Number,
 
@@ -85,8 +85,7 @@ var characterSchema = new mongoose.Schema({
 var Character = mongoose.model("Character", characterSchema);
 
 // 'reading' endpoint
-        // app.use(app.router)
-        // app.use(express.static())
+        
 app.get("/", (req, res) => {
     // res.send("Hello World:");
     res.sendFile( "C:/Users/aarth/Documents/mongo/students/test/index.html")
@@ -115,7 +114,8 @@ app.post("/add", (req, res) => {
     var myData = new Character(req.body);
     myData.save()
     .then(item => {
-        res.send("Item saved to database");
+        res.send("Item saved to database testtest");
+        res.send("Name : ");
     })
     .catch(err => {
         res.status(400).send("Unable to save to database");
