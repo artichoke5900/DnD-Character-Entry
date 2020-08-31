@@ -1,18 +1,141 @@
 <!DOCTYPE html>
 <html>
- <head>
- <title>Intro to Node and MongoDB</title>
- </head>
- 
- <body>
- <h1>Student</h1>
- <form method="post" action="/addname">
- <label>Enter Your Name : </label>
- <br>
- <input type="text" name="firstName" placeholder="Enter first name..." required>
- <input type="text" name="lastName" placeholder="Enter last name..." required>
- <br>
- <input type="submit" value="Add Name">
- </form>
- </body>
+    <head>
+        <title>Create A Level 1 Character</title>
+    </head>
+
+    <body>
+        <h1>Create A Level 1 Character</h1>
+
+        <form method="post" action="/add">
+            <label>Create A Level 1 Character</label>
+            <br>
+            <br>
+            <input type="text" name="cName" placeholder="Enter character name :" required>
+            <br>
+            
+            <input type="text" name="cOwner" placeholder="Enter player's Name :" required>
+            <br>
+            
+            <input type="hidden" name="cXP" value=0 />
+            <input type="hidden" name="cLevel" value=1 />
+
+            <select id="cRace" name="cRace" placeholder="Enter race :">
+                <option value="Human">Human</option>  
+                <option value="Tiefling">Tiefling</option>
+                <option value="Half-Orc">Half-Orc</option>
+                <option value="Dragonborn">Dragonborn</option>
+                <option value="Half-Elf">Half-Elf</option>
+                <optgroup label="Elf">
+                    <option value="High Elf">High Elf</option>
+                    <option value="Wood Elf">Wood Elf</option>
+                    <option value="Dark Elf">Dark Elf</option>
+                </optgroup>
+                <optgroup label="Dwarf">
+                    <option value="Hill Dwarf">Hill Dwarf</option>
+                    <option value="Mountain Dwarf">Mountain Dwarf</option>
+                </optgroup>
+                <optgroup label="Halfling">
+                    <option value="Lightfoot Halfling">Lightfoot Halfling</option>
+                    <option value="Stout Halfling">Stout Halfling</option>
+                </optgroup>
+                <optgroup label="Gnome">
+                    <option value="Forest Gnome">Forest Gnome</option>
+                    <option value="Rock Gnome">Rock Gnome</option>
+                </optgroup>
+            </select>
+            <br>
+
+            <p id="statprint"></p>
+
+            <script>
+                var dex = 2;
+                document.getElementById("statprint").innerHTML = "dex is " + dex;
+            </script>
+
+            <select id="cClass" name="cClass">
+                <option value="Barbarian">Barbarian</option>
+                <option value="Bard">Bard</option>
+                <option value="Cleric">Cleric</option>
+                <option value="Druid">Druid</option>
+                <option value="Fighter">Fighter</option>
+                <option value="Monk">Monk</option>
+                <option value="Paladin">Paladin</option>
+                <option value="Ranger">Ranger</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Sorcerer">Sorcerer</option>
+                <option value="Warlock">Warlock</option>
+                <option value="Wizard">Wizard</option>
+            </select>
+            <br>
+
+            <p id="statprint2"></p>
+            <script>
+                // if(document.)
+
+                    dex+=10
+                    document.getElementById("statprint2").innerHTML = "dex is " + dex;
+                    
+            </script>
+
+            <!-- accept base stats -->
+            <p id="statprint3"></p>
+
+
+
+            <!-- assign stats -->
+            <!-- str -->
+            <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
+            <input id="strModIP" type="hidden" name="cStats.Strength.Mod"/>
+            <script>
+                document.getElementById("strIP").value = str;
+                document.getElementById("strModIP").value = parseInt( (str-10)/2 );
+            </script>
+
+            <!-- dex -->
+            <input id="dexIP" type="hidden" name="cStats.Dexterity.Value"/>
+            <input id="dexModIP" type="hidden" name="cStats.Dexterity.Mod"/>
+            <script>
+                document.getElementById("dexIP").value = dex;
+                document.getElementById("dexModIP").value = parseInt( (dex-10)/2 );
+            </script>
+
+            <!-- con -->
+            <input id="conIP" type="hidden" name="cStats.Constitution.Value"/>
+            <input id="conModIP" type="hidden" name="cStats.Constitution.Mod"/>
+            <script>
+                document.getElementById("conIP").value = con;
+                document.getElementById("conModIP").value = parseInt( (con-10)/2 );
+            </script>
+
+            <!-- int -->
+            <input id="intIP" type="hidden" name="cStats.Intelligence.Value"/>
+            <input id="intModIP" type="hidden" name="cStats.Intelligence.Mod"/>
+            <script>
+                document.getElementById("intIP").value = int;
+                document.getElementById("intModIP").value = parseInt( (int-10)/2 );
+            </script>
+
+            <!-- wis -->
+            <input id="wisIP" type="hidden" name="cStats.Wisdom.Value"/>
+            <input id="wisModIP" type="hidden" name="cStats.Wisdom.Mod"/>
+            <script>
+                document.getElementById("wisIP").value = wis;
+                document.getElementById("wisModIP").value = parseInt( (wis-10)/2 );
+            </script>
+
+            <!-- cha -->
+            <input id="chaIP" type="hidden" name="cStats.Charisma.Value"/>
+            <input id="chaModIP" type="hidden" name="cStats.Charisma.Mod"/>
+            <script>
+                document.getElementById("chaIP").value = cha;
+                document.getElementById("chaModIP").value = parseInt( (cha-10)/2 );
+            </script>
+
+
+            <input type="submit" value="Next">
+        </form>
+
+        
+    </body>
 </html>
