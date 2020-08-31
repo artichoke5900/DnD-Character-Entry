@@ -64,7 +64,18 @@ var characterSchema = new mongoose.Schema({
         }
     },
     cCoins: Number,
-    
+    cInventory: [{
+        iName: String,
+        iDescription: String,
+        iWeight: Number,
+        iQty: Number
+    }],
+    cWeapons: [{
+        wName: String,
+        wDescription: String,
+        wDamage: String,
+        wToHit: Number,
+    }]
    }, {
     versionKey: false
    }
@@ -74,13 +85,32 @@ var characterSchema = new mongoose.Schema({
 var Character = mongoose.model("Character", characterSchema);
 
 // 'reading' endpoint
+        // app.use(app.router)
+        // app.use(express.static())
 app.get("/", (req, res) => {
     // res.send("Hello World:");
     res.sendFile( "C:/Users/aarth/Documents/mongo/students/test/index.html")
 });
 
+app.get("/selectrace", (req, res) => {
+    // res.send("Hello World:");
+    res.sendFile( "C:/Users/aarth/Documents/mongo/students/test/selectrace.html")
+});
+
+// app.post("/selectrace.html", (req, res) => {
+//     // // making a new instance of the model
+//     // var myData = new Character(req.body);
+//     // myData.save()
+//     // .then(item => {
+//     //     res.send("Item saved to database");
+//     // })
+//     // .catch(err => {
+//     //     res.status(400).send("Unable to save to database");
+//     // });
+// });
+
 // 'creating' endpoint
-app.post("/addname", (req, res) => {
+app.post("/add", (req, res) => {
     // making a new instance of the model
     var myData = new Character(req.body);
     myData.save()
@@ -95,6 +125,18 @@ app.post("/addname", (req, res) => {
 app.listen(port, () => {
     console.log("Server listening on port " + port);
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 // express.connect('mongodb://localhost/student_tests')   //establish connection
 // express.connection
