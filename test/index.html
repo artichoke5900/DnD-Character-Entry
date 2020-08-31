@@ -20,7 +20,7 @@
             <input type="hidden" name="cXP" value=0 />
             <input type="hidden" name="cLevel" value=1 />
 
-            <select id="cRaceID" name="cRace" placeholder="Enter race :">
+            <select id="cRaceID" name="cRace" placeholder="Enter race :" onchange="racialStatInc()">
                 <option value="Human">Human</option>  
                 <option value="Tiefling">Tiefling</option>
                 <option value="Half-Orc">Half-Orc</option>
@@ -37,7 +37,7 @@
                 </optgroup>
                 <optgroup label="Halfling">
                     <option value="Lightfoot Halfling">Lightfoot Halfling</option>
-                    <option value="Stout Halfling">Stout Halfling</option>
+                    <option value="St   out Halfling">Stout Halfling</option>
                 </optgroup>
                 <optgroup label="Gnome">
                     <option value="Forest Gnome">Forest Gnome</option>
@@ -46,13 +46,9 @@
             </select>
             <br>
 
+            <!-- <p id="demo"></p> -->
             <p id="statprint"></p>
-
             <script>
-                // var race = document.getElementById("cRaceID").value;
-                // if (race=="Human") {
-
-                // }
 
                 var str = 0;
                 var dex = 0;
@@ -62,6 +58,22 @@
                 var cha = 0;
                 // printing all racial/class modifiers
                 document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+            </script>
+            <script>
+                function racialStatInc() {
+                    var race = document.getElementById("cRaceID").value
+                    // document.getElementById("demo").innerHTML = race;
+                        // works
+
+                    if (race == "Human") {
+                        str+=1; dex+=1;
+                        con+=1; int+=1;
+                        wis+=1; cha+=1;
+                    }
+
+                    // print all modifiers
+                    document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+                }
             </script>
 
             <select id="cClass" name="cClass">
@@ -80,39 +92,26 @@
             </select>
             <br>
 
-            <p id="statprint2"></p>
             <script>
-                // if(document.)
-
-                    dex+=1
-                    document.getElementById("statprint2").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
-                    
+                    document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
             </script>
 
             <!-- accept base stats -->
             <label>Arrange the numbers 8, 10, 11, 12, 14 and 15 amongst your stats :</label>
                 <br>
-                Click submit for each
+                <input id="strBaseId" oninput="strSet()" type="number" name="strBase" placeholder="Enter Strength :" required>
                 <br>
-                <input id="strBaseId" type="number" name="strBase" placeholder="Enter Strength :" required>
-                <button type="button" onclick="strSet()">Submit</button>
+                <input id="dexBaseId" oninput="dexSet()" type="number" name="dexBase" placeholder="Enter Dexterity :" required>
                 <br>
-                <input id="dexBaseId" type="number" name="dexBase" placeholder="Enter Dexterity :" required>
-                <button type="button" onclick="dexSet()">Submit</button>
+                <input id="conBaseId" oninput="conSet()" type="number" name="conBase" placeholder="Enter Constitution :" required>
                 <br>
-                <input id="conBaseId" type="number" name="conBase" placeholder="Enter Constitution :" required>
-                <button type="button" onclick="conSet()">Submit</button>
+                <input id="intBaseId" oninput="intSet()" type="number" name="intBase" placeholder="Enter Intelligence :" required>
                 <br>
-                <input id="intBaseId" type="number" name="intBase" placeholder="Enter Intelligence :" required>
-                <button type="button" onclick="intSet()">Submit</button>
+                <input id="wisBaseId" oninput="wisSet()" type="number" name="wisBase" placeholder="Enter Wisdom :" required>
                 <br>
-                <input id="wisBaseId" type="number" name="wisBase" placeholder="Enter Wisdom :" required>
-                <button type="button" onclick="wisSet()">Submit</button>
+                <input id="chaBaseId" oninput="chaSet()" type="number" name="chaBase" placeholder="Enter Charisma :" required>
                 <br>
-                <input id="chaBaseId" type="number" name="chaBase" placeholder="Enter Charisma :" required>
-                <button type="button" onclick="chaSet()">Submit</button>
-                <br>
-            <!-- <button type="button" onclick="strSet()">Submit</button> -->
+                
 
             <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
             <input id="strModIP" type="hidden" name="cStats.Strength.Mod"/>
@@ -184,42 +183,8 @@
                     document.getElementById("chaModIP").value = parseInt( (cha+chaBase-10)/2 );
                 }
             </script>
-            
 
-            <!-- con
-            <input id="conIP" type="hidden" name="cStats.Constitution.Value"/>
-            <input id="conModIP" type="hidden" name="cStats.Constitution.Mod"/>
-            <script>
-                document.getElementById("conIP").value = con;
-                document.getElementById("conModIP").value = parseInt( (con-10)/2 );
-            </script> -->
-
-            <!-- int
-            <input id="intIP" type="hidden" name="cStats.Intelligence.Value"/>
-            <input id="intModIP" type="hidden" name="cStats.Intelligence.Mod"/>
-            <script>
-                document.getElementById("intIP").value = int;
-                document.getElementById("intModIP").value = parseInt( (int-10)/2 );
-            </script>
-
-            wis
-            <input id="wisIP" type="hidden" name="cStats.Wisdom.Value"/>
-            <input id="wisModIP" type="hidden" name="cStats.Wisdom.Mod"/>
-            <script>
-                document.getElementById("wisIP").value = wis;
-                document.getElementById("wisModIP").value = parseInt( (wis-10)/2 );
-            </script>
-
-            cha
-            <input id="chaIP" type="hidden" name="cStats.Charisma.Value"/>
-            <input id="chaModIP" type="hidden" name="cStats.Charisma.Mod"/>
-            <script>
-                document.getElementById("chaIP").value = cha;
-                document.getElementById("chaModIP").value = parseInt( (cha-10)/2 );
-            </script> -->
-
-
-            <input type="submit" value="Next">
+            <input type="submit" value="Enter">
         </form>
 
         
