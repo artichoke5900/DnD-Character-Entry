@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <title>Create A Level 1 Character</title>
+        <script>        // works
+        //     function msg() {
+        //     document.write("this is the index.html fn")
+        // }
+        </script>
+
+        <!-- doesnt work -->
+        <!-- <script type="text/javascript" src="test/app.js"></script> -->
     </head>
 
     <body>
@@ -52,87 +61,90 @@
             <input id="spdID" type="hidden" name="cSpeed"/>
             <p id="statprint"></p>
             <script>
-                // default creature speed as 30ft
-                document.getElementById("spdID").value = parseInt(30);
+                // // default creature speed as 30ft
+                // document.getElementById("spdID").value = parseInt(30);
+                
+                // // (start off human)
+                // document.getElementById("cRaceID").value = "Human"
+                // str=1; dex=1; con=1; int=1; wis=1; cha=1;
 
-                // (start off human)
-                str=1; dex=1; con=1; int=1; wis=1; cha=1;
-
-                // printing all racial/class modifiers
-                document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+                // // printing all racial/class modifiers
+                // document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
             </script>
 
+
+
             <script>
-                function racialStatInc() {
-                    var race = document.getElementById("cRaceID").value
-                    // document.getElementById("demo").innerHTML = race;
-                        // works
+                // function racialStatInc() {
+                //     var race = document.getElementById("cRaceID").value
+                //     // document.getElementById("demo").innerHTML = race;
+                //         // works
 
-                    if (race == "Human") {
-                        str=1; dex=1; con=1; int=1; wis=1; cha=1;
-                        document.getElementById("spdID").value = parseInt(30);
-                    }
-                    else if (race == "Tiefling") {
-                        str=0; dex=0; con=0; int=1; wis=0; cha=2;
-                        document.getElementById("spdID").value = parseInt(30);
-                    }
-                    else if (race == "Half-Orc") {
-                        str=2; dex=0; con=1; int=0; wis=0; cha=0;
-                        document.getElementById("spdID").value = parseInt(30);
-                    }
-                    else if (race == "Dragonborn") {
-                        str=2; dex=0; con=0; int=0; wis=0; cha=1;
-                        document.getElementById("spdID").value = parseInt(30);
-                    }
-                    else if (race == "Half-Elf") {
-                        str=0; dex=0; con=0; int=0; wis=0; cha=2;
-                        document.getElementById("spdID").value = parseInt(30);
-                        document.getElementById("optionalIncrease").innerHTML = "Half-elves may increase two other ability scores (of your choice) by 1."
-                    }
+                //     if (race == "Human") {
+                //         str=1; dex=1; con=1; int=1; wis=1; cha=1;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //     }
+                //     else if (race == "Tiefling") {
+                //         str=0; dex=0; con=0; int=1; wis=0; cha=2;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //     }
+                //     else if (race == "Half-Orc") {
+                //         str=2; dex=0; con=1; int=0; wis=0; cha=0;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //     }
+                //     else if (race == "Dragonborn") {
+                //         str=2; dex=0; con=0; int=0; wis=0; cha=1;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //     }
+                //     else if (race == "Half-Elf") {
+                //         str=0; dex=0; con=0; int=0; wis=0; cha=2;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //         document.getElementById("optionalIncrease").innerHTML = "Half-elves may increase two other ability scores (of your choice) by 1."
+                //     }
 
-                    else if (race == "High Elf") {
-                        str=0; dex=2; con=0; int=1; wis=0; cha=0;
-                        document.getElementById("spdID").value = parseInt(30);
-                    }
-                    else if (race == "Wood Elf") {
-                        str=0; dex=2; con=0; int=0; wis=1; cha=0;
-                        document.getElementById("spdID").value = parseInt(35);
-                    }
-                    else if (race == "Dark Elf") {
-                        str=0; dex=2; con=0; int=0; wis=0; cha=1;
-                        document.getElementById("spdID").value = parseInt(30);
-                    }
+                //     else if (race == "High Elf") {
+                //         str=0; dex=2; con=0; int=1; wis=0; cha=0;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //     }
+                //     else if (race == "Wood Elf") {
+                //         str=0; dex=2; con=0; int=0; wis=1; cha=0;
+                //         document.getElementById("spdID").value = parseInt(35);
+                //     }
+                //     else if (race == "Dark Elf") {
+                //         str=0; dex=2; con=0; int=0; wis=0; cha=1;
+                //         document.getElementById("spdID").value = parseInt(30);
+                //     }
 
-                    else if (race == "Hill Dwarf") {
-                        str=0; dex=0; con=2; int=0; wis=1; cha=0;
-                        document.getElementById("spdID").value = parseInt(25);
-                        // max hp increases by 1, and further by 1 each time a level is gained
-                    }
-                    else if (race == "Mountain Dwarf") {
-                        str=2; dex=0; con=2; int=0; wis=0; cha=0;   
-                        document.getElementById("spdID").value = parseInt(25);
-                    }
+                //     else if (race == "Hill Dwarf") {
+                //         str=0; dex=0; con=2; int=0; wis=1; cha=0;
+                //         document.getElementById("spdID").value = parseInt(25);
+                //         // max hp increases by 1, and further by 1 each time a level is gained
+                //     }
+                //     else if (race == "Mountain Dwarf") {
+                //         str=2; dex=0; con=2; int=0; wis=0; cha=0;   
+                //         document.getElementById("spdID").value = parseInt(25);
+                //     }
 
-                    else if (race == "Lightfoot Halfling") {
-                        str=0; dex=2; con=0; int=0; wis=0; cha=1;
-                        document.getElementById("spdID").value = parseInt(25);
-                    }
-                    else if (race == "Stout Halfling") {
-                        str=0; dex=2; con=1; int=0; wis=0; cha=0;
-                        document.getElementById("spdID").value = parseInt(25);
-                    }
+                //     else if (race == "Lightfoot Halfling") {
+                //         str=0; dex=2; con=0; int=0; wis=0; cha=1;
+                //         document.getElementById("spdID").value = parseInt(25);
+                //     }
+                //     else if (race == "Stout Halfling") {
+                //         str=0; dex=2; con=1; int=0; wis=0; cha=0;
+                //         document.getElementById("spdID").value = parseInt(25);
+                //     }
 
-                    else if (race == "Forest Gnome") {
-                        str=0; dex=1; con=0; int=2; wis=0; cha=0;
-                        document.getElementById("spdID").value = parseInt(25);
-                    }
-                    else if (race == "Rock Gnome") {
-                        str=0; dex=0; con=1; int=2; wis=0; cha=0;
-                        document.getElementById("spdID").value = parseInt(25);
-                    }
-                    // print all modifiers
-                    document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
-                }
+                //     else if (race == "Forest Gnome") {
+                //         str=0; dex=1; con=0; int=2; wis=0; cha=0;
+                //         document.getElementById("spdID").value = parseInt(25);
+                //     }
+                //     else if (race == "Rock Gnome") {
+                //         str=0; dex=0; con=1; int=2; wis=0; cha=0;
+                //         document.getElementById("spdID").value = parseInt(25);
+                //     }
+                //     // print all modifiers
+                //     document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+                // }
             </script>
 
             <select id="cClassID" name="cClass" onchange="classEffects()">
@@ -151,96 +163,11 @@
             </select>
             <br>
 
+            <p id="selectClassWeapon">Selecting class weapon text here</p>
+            <p id="selectClassEquip">Selecting class equipment text here</p>
 
-            <!-- <script>
-                // define weapons object
-                var weaponObject = {
-                    "wName" : null,
-                    "wDescription" : null,
-                    "wDamage": null,
-                    "wToHit": 0
-                }
-
-            </script> -->
-
-            <input id="equipment" type="hidden" name="cInventory"/>
-            <!-- <input id = "weapons" type="hidden" name="cWeapons"/> -->
             <input id="hitdieID" type="hidden" name="cHitDieType"/>
-            <script>
-                // as default is barbarian
-                document.getElementById("hitdieID") = "d12";
-            </script>
-            <script>
-                function classEffects() {
-                    var cClass = document.getElementById("cClassID").value;
-                    var inventory = document.getElementById("equipment").value;
-                    // var weapons = document.getElementById("weapons").value;
 
-                    // obtaining starting equipment for class
-                    if (cClass == "Barbarian") {
-                        
-                    }
-                    else if (cClass == "Sorcerer" ) {
-                        
-                    }
-                    else if (cClass == "Wizard") {
-
-                    }
-                    else if (cClass == "Bard"  ) {
-                        // var tempWeapon = {
-                        //     wName:"Rapier", 
-                        //     wDescription:"it is rapier", 
-                        //     wDamage:"1d4", 
-                        //     wToHit:4
-                        // };
-                        // weapons.value.push(tempWeapon);
-                        //document.getElementById("weapons").value.push(tempWeapon);
-                        // document.getElementById("weapons").value.push({wName:"Rapier", wDescription:"it is rapier", wDamage:"1d4", wToHit:4});
-                    }
-                    else if (cClass == "Cleric" ) {
-
-                    }
-                    else if (cClass == "Monk" ) {
-
-                    }
-                    else if (cClass == "Druid" ) {
-
-                    }
-                    else if (cClass == "Rogue") {
-
-                    }
-                    else if ( cClass == "Warlock") {
-
-                    }
-                    else if (cClass == "Fighter") {
-                        document.getElementById("hitdieID").value = "d10";
-                    }
-                    else if (cClass == "Paladin" ) {
-
-                    }
-                    else if (cClass == "Ranger") {
-
-                    }
-
-                    
-                    // determine cHitDieType
-                    if (cClass == "Barbarian") {
-                        document.getElementById("hitdieID").value = "d12";
-                    }
-                    else if (cClass == "Sorcerer" || cClass == "Wizard") {
-                        document.getElementById("hitdieID").value = "d6";
-                    }
-                    else if (cClass == "Bard" || cClass == "Cleric" || cClass == "Monk" || cClass == "Druid" || cClass == "Rogue" || cClass == "Warlock" ) {
-                        document.getElementById("hitdieID").value = "d8";
-                    }
-                    else if (cClass == "Fighter" || cClass == "Paladin" || cClass == "Ranger") {
-                        document.getElementById("hitdieID").value = "d10";
-                    }
-                }
-            </script>
-            <script>
-                    document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
-            </script>
 
             <!-- accept base stats -->
             <br><br>
@@ -260,13 +187,6 @@
                 <input id="chaBaseId" oninput="chaSet()" type="number" name="chaBase" placeholder="Enter Charisma :" required>
                 <br>
 
-            <script>
-                var race = document.getElementById("cRaceID").value
-                if (race=="Half-Elf") {
-                    document.getElementById("optionalIncrease").innerHTML = "Half-elves may increase two other ability scores (of your choice) by 1 each."
-                }
-            </script>
-            
 
             <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
             <input id="strModIP" type="hidden" name="cStats.Strength.Mod"/>
@@ -284,105 +204,219 @@
 
             <input id="cMoveID" type="hidden" name="cMoveCapacity"/>
             <input id="cCarryID" type="hidden" name="cCarryCapacity"/>
-            <p id="statprint3"></p>
-            <script type="text/javascript">
-                function strSet() {
-                    var strBase = parseInt(document.getElementById("strBaseId").value);
-                    // str+=strBase;
-                    document.getElementById("statprint3").innerHTML = "strAdditional is " + str + ", strBase is " + strBase;
-                    document.getElementById("strIP").value = str + strBase;
-                    document.getElementById("strModIP").value = parseInt( (str+strBase-10)/2 );
 
-                    // also determine carry capacity and move capacity
-                    document.getElementById("cMoveID").value = 15*(str+strBase);
-                    document.getElementById("cCarryID").value = 30*(str+strBase);
-                }
-            </script>
+
+            <p id="statprint3"></p>
 
             <input id="initModID" type="hidden" name="cInitMod"/>
-            <script type="text/javascript">
-                function dexSet() {
-                    var dexBase = parseInt(document.getElementById("dexBaseId").value);
-                    // dex+=dexBase;
-                    document.getElementById("statprint3").innerHTML = "dexAdditional is " + dex + ", dexBase is " + dexBase;
-                    document.getElementById("dexIP").value = dex + dexBase;
-                    document.getElementById("dexModIP").value = parseInt( (dex+dexBase-10)/2 );
-
-                    document.getElementById("initModID").value = parseInt(document.getElementById("dexModIP").value);
-                }
-            </script>
 
             <input id="HPID" type="hidden" name="cHP"/>
             <input id="MaxHPID" type="hidden" name="cMaxHP"/>
-            <script type="text/javascript">
-                function conSet() {
-                    var conBase = parseInt(document.getElementById("conBaseId").value);
-                    
-                    document.getElementById("statprint3").innerHTML = "conAdditional is " + con + ", conBase is " + conBase;
-                    document.getElementById("conIP").value = con + conBase;
-                    document.getElementById("conModIP").value = parseInt( (con+conBase-10)/2 );
-
-                    // determing starting hp
-                    var cClass = document.getElementById("cClassID").value;
-                    var conMod = parseInt(document.getElementById("conModIP").value);
-
-                    var diceVal;
-                    if (cClass == "Barbarian") {
-                        diceVal = parseInt(12);
-                    }
-                    else if (cClass == "Sorcerer" || cClass == "Wizard") {
-                        diceVal = parseInt(6);
-                    }
-                    else if (cClass == "Bard" || cClass == "Cleric" || cClass == "Monk" || cClass == "Druid" || cClass == "Rogue" || cClass == "Warlock" ) {
-                        diceVal = parseInt(8);
-                    }
-                    else if (cClass == "Fighter" || cClass == "Paladin" || cClass == "Ranger") {
-                        diceVal = parseInt(10);
-                    }
-
-                    document.getElementById("HPID").value = diceVal + conMod;
-                    document.getElementById("MaxHPID").value = diceVal + conMod;
-
-                }
-            </script>
-            <script type="text/javascript">
-                function intSet() {
-                    var intBase = parseInt(document.getElementById("intBaseId").value);
-
-                    document.getElementById("statprint3").innerHTML = "intAdditional is " + int + ", intBase is " + intBase;
-                    document.getElementById("intIP").value = int + intBase;
-                    document.getElementById("intModIP").value = parseInt( (int+intBase-10)/2 );
-                }
-            </script>
-
-            <input id="ppID" type="hidden" name="cPassivePerception"/>
-            <script type="text/javascript">
-                function wisSet() {
-                    var wisBase = parseInt(document.getElementById("wisBaseId").value);
-
-                    document.getElementById("statprint3").innerHTML = "wisAdditional is " + wis + ", wisBase is " + wisBase;
-                    document.getElementById("wisIP").value = wis + wisBase;
-                    document.getElementById("wisModIP").value = parseInt( (wis+wisBase-10)/2 );
-
-                    document.getElementById("ppID").value = parseInt( (wis+wisBase-10)/2  + 10);
-                }
-            </script>
-            <script type="text/javascript">
-                function chaSet() {
-                    var chaBase = parseInt(document.getElementById("chaBaseId").value);
-
-                    document.getElementById("statprint3").innerHTML = "chaAdditional is " + cha + ", chaBase is " + chaBase;
-                    document.getElementById("chaIP").value = cha + chaBase;
-                    document.getElementById("chaModIP").value = parseInt( (cha+chaBase-10)/2 );
-                }
-            </script>
 
 
-
+            <input type="button" value="click" onclick="msg()"/>  
 
             <input type="submit" value="Enter">
         </form>
 
-        
+
+
+    <!-- JS HERE  -->
+    <script type="text/javascript">
+        document.write("Testing script tag");
+        function msg() {             // works
+            document.write("this is the index.html fn")
+        }
+
+        function racialStatInc() {
+            var race = document.getElementById("cRaceID").value
+            // document.getElementById("demo").innerHTML = race;
+                // works
+
+            if (race == "Human") {
+                str=1; dex=1; con=1; int=1; wis=1; cha=1;
+                document.getElementById("spdID").value = parseInt(30);
+            }
+            else if (race == "Tiefling") {
+                str=0; dex=0; con=0; int=1; wis=0; cha=2;
+                document.getElementById("spdID").value = parseInt(30);
+            }
+            else if (race == "Half-Orc") {
+                str=2; dex=0; con=1; int=0; wis=0; cha=0;
+                document.getElementById("spdID").value = parseInt(30);
+            }
+            else if (race == "Dragonborn") {
+                str=2; dex=0; con=0; int=0; wis=0; cha=1;
+                document.getElementById("spdID").value = parseInt(30);
+            }
+            else if (race == "Half-Elf") {
+                str=0; dex=0; con=0; int=0; wis=0; cha=2;
+                document.getElementById("spdID").value = parseInt(30);
+                document.getElementById("optionalIncrease").innerHTML = "Half-elves may increase any two ability scores (of your choice) by 1."
+            }
+
+            else if (race == "High Elf") {
+                str=0; dex=2; con=0; int=1; wis=0; cha=0;
+                document.getElementById("spdID").value = parseInt(30);
+            }
+            else if (race == "Wood Elf") {
+                str=0; dex=2; con=0; int=0; wis=1; cha=0;
+                document.getElementById("spdID").value = parseInt(35);
+            }
+            else if (race == "Dark Elf") {
+                str=0; dex=2; con=0; int=0; wis=0; cha=1;
+                document.getElementById("spdID").value = parseInt(30);
+            }
+
+            else if (race == "Hill Dwarf") {
+                str=0; dex=0; con=2; int=0; wis=1; cha=0;
+                document.getElementById("spdID").value = parseInt(25);
+                // max hp increases by 1, and further by 1 each time a level is gained
+            }
+            else if (race == "Mountain Dwarf") {
+                str=2; dex=0; con=2; int=0; wis=0; cha=0;   
+                document.getElementById("spdID").value = parseInt(25);
+            }
+
+            else if (race == "Lightfoot Halfling") {
+                str=0; dex=2; con=0; int=0; wis=0; cha=1;
+                document.getElementById("spdID").value = parseInt(25);
+            }
+            else if (race == "Stout Halfling") {
+                str=0; dex=2; con=1; int=0; wis=0; cha=0;
+                document.getElementById("spdID").value = parseInt(25);
+            }
+
+            else if (race == "Forest Gnome") {
+                str=0; dex=1; con=0; int=2; wis=0; cha=0;
+                document.getElementById("spdID").value = parseInt(25);
+            }
+            else if (race == "Rock Gnome") {
+                str=0; dex=0; con=1; int=2; wis=0; cha=0;
+                document.getElementById("spdID").value = parseInt(25);
+            }
+            // print all modifiers
+            document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+        }
+
+        function classEffects() {
+            var cClass = document.getElementById("cClassID").value;
+
+            // determine cHitDieType
+            if (cClass == "Barbarian") {
+                document.getElementById("hitdieID").value = "d12";
+            }
+            else if (cClass == "Sorcerer" || cClass == "Wizard") {
+                document.getElementById("hitdieID").value = "d6";
+            }
+            else if (cClass == "Bard" || cClass == "Cleric" || cClass == "Monk" || cClass == "Druid" || cClass == "Rogue" || cClass == "Warlock" ) {
+                document.getElementById("hitdieID").value = "d8";
+            }
+            else if (cClass == "Fighter" || cClass == "Paladin" || cClass == "Ranger") {
+                document.getElementById("hitdieID").value = "d10";
+            }
+            
+        }
+
+
+        // determining stats...
+        function strSet() {
+            var strBase = parseInt(document.getElementById("strBaseId").value);
+            // str+=strBase;
+            document.getElementById("statprint3").innerHTML = "strAdditional is " + str + ", strBase is " + strBase;
+            document.getElementById("strIP").value = str + strBase;
+            document.getElementById("strModIP").value = parseInt( (str+strBase-10)/2 );
+
+            // also determine carry capacity and move capacity
+            document.getElementById("cMoveID").value = 15*(str+strBase);
+            document.getElementById("cCarryID").value = 30*(str+strBase);
+        }
+        function dexSet() {
+            var dexBase = parseInt(document.getElementById("dexBaseId").value);
+            // dex+=dexBase;
+            document.getElementById("statprint3").innerHTML = "dexAdditional is " + dex + ", dexBase is " + dexBase;
+            document.getElementById("dexIP").value = dex + dexBase;
+            document.getElementById("dexModIP").value = parseInt( (dex+dexBase-10)/2 );
+
+            document.getElementById("initModID").value = parseInt(document.getElementById("dexModIP").value);
+        }
+        function conSet() {
+            var conBase = parseInt(document.getElementById("conBaseId").value);
+            
+            document.getElementById("statprint3").innerHTML = "conAdditional is " + con + ", conBase is " + conBase;
+            document.getElementById("conIP").value = con + conBase;
+            document.getElementById("conModIP").value = parseInt( (con+conBase-10)/2 );
+
+            // determing starting hp
+            var cClass = document.getElementById("cClassID").value;
+            var conMod = parseInt(document.getElementById("conModIP").value);
+
+            var diceVal;
+            if (cClass == "Barbarian") {
+                diceVal = parseInt(12);
+            }
+            else if (cClass == "Sorcerer" || cClass == "Wizard") {
+                diceVal = parseInt(6);
+            }
+            else if (cClass == "Bard" || cClass == "Cleric" || cClass == "Monk" || cClass == "Druid" || cClass == "Rogue" || cClass == "Warlock" ) {
+                diceVal = parseInt(8);
+            }
+            else if (cClass == "Fighter" || cClass == "Paladin" || cClass == "Ranger") {
+                diceVal = parseInt(10);
+            }
+            document.getElementById("HPID").value = diceVal + conMod;
+            document.getElementById("MaxHPID").value = diceVal + conMod;
+        }
+        function intSet() {
+            var intBase = parseInt(document.getElementById("intBaseId").value);
+
+            document.getElementById("statprint3").innerHTML = "intAdditional is " + int + ", intBase is " + intBase;
+            document.getElementById("intIP").value = int + intBase;
+            document.getElementById("intModIP").value = parseInt( (int+intBase-10)/2 );
+        }
+        function wisSet() {
+            var wisBase = parseInt(document.getElementById("wisBaseId").value);
+
+            document.getElementById("statprint3").innerHTML = "wisAdditional is " + wis + ", wisBase is " + wisBase;
+            document.getElementById("wisIP").value = wis + wisBase;
+            document.getElementById("wisModIP").value = parseInt( (wis+wisBase-10)/2 );
+
+            document.getElementById("ppID").value = parseInt( (wis+wisBase-10)/2  + 10);
+        }
+        function chaSet() {
+            var chaBase = parseInt(document.getElementById("chaBaseId").value);
+
+            document.getElementById("statprint3").innerHTML = "chaAdditional is " + cha + ", chaBase is " + chaBase;
+            document.getElementById("chaIP").value = cha + chaBase;
+            document.getElementById("chaModIP").value = parseInt( (cha+chaBase-10)/2 );
+        }
+
+        // default creature speed as 30ft
+        document.getElementById("spdID").value = parseInt(30);
+                        
+        // (start off human)
+        document.getElementById("cRaceID").value = "Human"
+        str=1; dex=1; con=1; int=1; wis=1; cha=1;
+
+        // printing all racial/class modifiers
+        document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+
+        // (start off barbarian)
+        document.getElementById("cClassID").value = "Barbarian";
+        document.getElementById("hitdieID").value = "d12";
+
+        // display current stat increases
+        document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
+
+        var race = document.getElementById("cRaceID").value;
+        if (race=="Half-Elf") 
+        {
+            document.getElementById("optionalIncrease").innerHTML = "Half-elves may increase two other ability scores (of your choice) by 1 each."
+        }
+
+    </script>
+
+    <!-- doesnt work -->
+    <!-- <script type="text/javascript" lang="javascript"  src="./app.js" charset="utf-8"></script> -->
     </body>
 </html>
