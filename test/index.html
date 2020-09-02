@@ -60,93 +60,7 @@
 
             <input id="spdID" type="hidden" name="cSpeed"/>
             <p id="statprint"></p>
-            <script>
-                // // default creature speed as 30ft
-                // document.getElementById("spdID").value = parseInt(30);
-                
-                // // (start off human)
-                // document.getElementById("cRaceID").value = "Human"
-                // str=1; dex=1; con=1; int=1; wis=1; cha=1;
-
-                // // printing all racial/class modifiers
-                // document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
-            </script>
-
-
-
-            <script>
-                // function racialStatInc() {
-                //     var race = document.getElementById("cRaceID").value
-                //     // document.getElementById("demo").innerHTML = race;
-                //         // works
-
-                //     if (race == "Human") {
-                //         str=1; dex=1; con=1; int=1; wis=1; cha=1;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //     }
-                //     else if (race == "Tiefling") {
-                //         str=0; dex=0; con=0; int=1; wis=0; cha=2;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //     }
-                //     else if (race == "Half-Orc") {
-                //         str=2; dex=0; con=1; int=0; wis=0; cha=0;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //     }
-                //     else if (race == "Dragonborn") {
-                //         str=2; dex=0; con=0; int=0; wis=0; cha=1;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //     }
-                //     else if (race == "Half-Elf") {
-                //         str=0; dex=0; con=0; int=0; wis=0; cha=2;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //         document.getElementById("optionalIncrease").innerHTML = "Half-elves may increase two other ability scores (of your choice) by 1."
-                //     }
-
-                //     else if (race == "High Elf") {
-                //         str=0; dex=2; con=0; int=1; wis=0; cha=0;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //     }
-                //     else if (race == "Wood Elf") {
-                //         str=0; dex=2; con=0; int=0; wis=1; cha=0;
-                //         document.getElementById("spdID").value = parseInt(35);
-                //     }
-                //     else if (race == "Dark Elf") {
-                //         str=0; dex=2; con=0; int=0; wis=0; cha=1;
-                //         document.getElementById("spdID").value = parseInt(30);
-                //     }
-
-                //     else if (race == "Hill Dwarf") {
-                //         str=0; dex=0; con=2; int=0; wis=1; cha=0;
-                //         document.getElementById("spdID").value = parseInt(25);
-                //         // max hp increases by 1, and further by 1 each time a level is gained
-                //     }
-                //     else if (race == "Mountain Dwarf") {
-                //         str=2; dex=0; con=2; int=0; wis=0; cha=0;   
-                //         document.getElementById("spdID").value = parseInt(25);
-                //     }
-
-                //     else if (race == "Lightfoot Halfling") {
-                //         str=0; dex=2; con=0; int=0; wis=0; cha=1;
-                //         document.getElementById("spdID").value = parseInt(25);
-                //     }
-                //     else if (race == "Stout Halfling") {
-                //         str=0; dex=2; con=1; int=0; wis=0; cha=0;
-                //         document.getElementById("spdID").value = parseInt(25);
-                //     }
-
-                //     else if (race == "Forest Gnome") {
-                //         str=0; dex=1; con=0; int=2; wis=0; cha=0;
-                //         document.getElementById("spdID").value = parseInt(25);
-                //     }
-                //     else if (race == "Rock Gnome") {
-                //         str=0; dex=0; con=1; int=2; wis=0; cha=0;
-                //         document.getElementById("spdID").value = parseInt(25);
-                //     }
-                //     // print all modifiers
-                //     document.getElementById("statprint").innerHTML = "str is "+str+"<br>dex is "+dex+"<br>con is "+con+"<br>int is "+int+"<br>wis is "+wis+"<br>cha is "+cha;
-                // }
-            </script>
-
+            
             <select id="cClassID" name="cClass" onchange="classEffects()">
                 <option value="Barbarian">Barbarian</option>
                 <option value="Bard">Bard</option>
@@ -162,9 +76,6 @@
                 <option value="Wizard">Wizard</option>
             </select>
             <br>
-
-            <p id="selectClassWeapon">Selecting class weapon text here</p>
-            <p id="selectClassEquip">Selecting class equipment text here</p>
 
             <input id="hitdieID" type="hidden" name="cHitDieType"/>
 
@@ -214,18 +125,47 @@
             <input id="MaxHPID" type="hidden" name="cMaxHP"/>
 
 
-            <input type="button" value="click" onclick="msg()"/>  
+            <!-- list all weapons -->
+            <input id="greataxe" type="hidden" name="GreatAxe" value="blahblahgreataxe"/>
+
+           <p id="classEquipmentIntro">
+                Choose the following equipment.
+                <br>
+                Click to copy the command to log each piece of equipment in discord.
+            </p>
+            <p id="selectClassWeapon">
+                A greataxe <button type="button" onclick="copyText()">Copy</button> any martial melee weapon 
+                <br>
+                Two handaxes (or) any simple weapon
+            </p>
+            <p id="selectClassEquip">Selecting class equipment text here</p>
 
             <input type="submit" value="Enter">
         </form>
 
 
 
+
+
+
+
+
+<!-- __________________________________________________________________________________________________________________________________________________________________ -->
+
     <!-- JS HERE  -->
     <script type="text/javascript">
         document.write("Testing script tag");
         function msg() {             // works
             document.write("this is the index.html fn")
+        }
+        function copyText() {
+            var copytext = document.getElementById("greataxe").value;
+
+            copyText.s
+            copytext.select();
+            copytext.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+
         }
 
         function racialStatInc() {
@@ -315,8 +255,51 @@
             else if (cClass == "Fighter" || cClass == "Paladin" || cClass == "Ranger") {
                 document.getElementById("hitdieID").value = "d10";
             }
-            
+
+            // obtaining starting equipment for class
+            if (cClass == "Barbarian") {
+                document.getElementById("selectClassWeapon").innerHTML 
+                = "A greataxe (or) any martial melee weapon <br>"+
+                " Two handaxes (or) any simple weapon";
+
+                document.getElementById("selectClassEquip").innerHTML
+                = ""
+            }
+            else if (cClass == "Bard" ) {
+                
+            }
+            else if (cClass == "Cleric") {
+
+            }
+            else if (cClass == "Druid"  ) {
+                
+            }
+            else if (cClass == "Fighter" ) {
+
+            }
+            else if (cClass == "Monk" ) {
+
+            }
+            else if (cClass == "Paladin" ) {
+
+            }
+            else if (cClass == "Ranger") {
+
+            }
+            else if ( cClass == "Rogue") {
+
+            }
+            else if (cClass == "Sorcerer") {
+                
+            }
+            else if (cClass == "Warlock" ) {
+
+            }
+            else if (cClass == "Wizard") {
+
+            }
         }
+
 
 
         // determining stats...
