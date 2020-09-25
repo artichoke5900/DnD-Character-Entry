@@ -44,42 +44,55 @@
             <label>Create A Level 1 Character</label>
             <br>
             <br>
-            <input type="text" name="cName" placeholder="Enter character name :" required>
+            Name: <input type="text" name="cName" placeholder="Enter character name :" required>
             <br>
-            
-            <input type="text" name="cOwner" placeholder="Enter player's Name :" required>
+            Race:   <select id="cRaceID" name="cRace" placeholder="Enter race :" onchange="racialStatInc()">
+                        <option value="Human">Human</option>  
+                        <option value="Tiefling">Tiefling</option>
+                        <option value="Half-Orc">Half-Orc</option>
+                        <option value="Dragonborn">Dragonborn</option>
+                        <option value="Half-Elf">Half-Elf</option>
+                        <optgroup label="Elf">
+                            <option value="High Elf">High Elf</option>
+                            <option value="Wood Elf">Wood Elf</option>
+                            <option value="Dark Elf">Dark Elf</option>
+                        </optgroup>
+                        <optgroup label="Dwarf">
+                            <option value="Hill Dwarf">Hill Dwarf</option>
+                            <option value="Mountain Dwarf">Mountain Dwarf</option>
+                        </optgroup>
+                        <optgroup label="Halfling">
+                            <option value="Lightfoot Halfling">Lightfoot Halfling</option>
+                            <option value="Stout Halfling">Stout Halfling</option>
+                        </optgroup>
+                        <optgroup label="Gnome">
+                            <option value="Forest Gnome">Forest Gnome</option>
+                            <option value="Rock Gnome">Rock Gnome</option>
+                        </optgroup>
+                    </select>
             <br>
+            Class: 
+            <br>
+            Owner: 
+            <br>
+            <!-- HP -->
+            <!-- maxHP -->
+            <!-- speed -->
+            <!-- xp -->
+            <!-- level -->
+
+
             
             <input type="hidden" name="cXP" value=0 />
             <input type="hidden" name="cLevel" value=1 />
             <input type="hidden" name="cHitDice" value=1 />
             <input type="hidden" name="cProficiencyBonus" value=2 />
+            <br>
+            <input type="text" name="cOwner" placeholder="Enter player's Name :" required>
+            <br>
             
 
-            <select id="cRaceID" name="cRace" placeholder="Enter race :" onchange="racialStatInc()">
-                <option value="Human">Human</option>  
-                <option value="Tiefling">Tiefling</option>
-                <option value="Half-Orc">Half-Orc</option>
-                <option value="Dragonborn">Dragonborn</option>
-                <option value="Half-Elf">Half-Elf</option>
-                <optgroup label="Elf">
-                    <option value="High Elf">High Elf</option>
-                    <option value="Wood Elf">Wood Elf</option>
-                    <option value="Dark Elf">Dark Elf</option>
-                </optgroup>
-                <optgroup label="Dwarf">
-                    <option value="Hill Dwarf">Hill Dwarf</option>
-                    <option value="Mountain Dwarf">Mountain Dwarf</option>
-                </optgroup>
-                <optgroup label="Halfling">
-                    <option value="Lightfoot Halfling">Lightfoot Halfling</option>
-                    <option value="Stout Halfling">Stout Halfling</option>
-                </optgroup>
-                <optgroup label="Gnome">
-                    <option value="Forest Gnome">Forest Gnome</option>
-                    <option value="Rock Gnome">Rock Gnome</option>
-                </optgroup>
-            </select>
+            
             <br>
 
             <input id="spdID" type="hidden" name="cSpeed"/>
