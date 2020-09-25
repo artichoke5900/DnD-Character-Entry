@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
+        <!-- <meta charset="utf-8"/> -->
         <title>Create A Level 1 Character</title>
         <script>        // works
         //     function msg() {
@@ -9,13 +9,37 @@
         // }
         </script>
 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="/public/style.css"> -->
+
         <!-- doesnt work -->
         <!-- <script type="text/javascript" src="test/app.js"></script> -->
     </head>
 
+    <style>
+        body { 
+        animation: fadeInAnimation ease 0.7s;
+        animation-iteration-count: 1; 
+        animation-fill-mode: forwards; 
+    } 
+      
+    @keyframes fadeInAnimation { 
+        0% { 
+            opacity: 0; 
+        } 
+        100% { 
+            opacity: 1; 
+         } 
+    } 
+
+    </style>
+    
+
     <body>
         <h1>Create A Level 1 Character</h1>
 
+        <section id="container_to_be_aligned">
         <form method="post" action="/add">
             <label>Create A Level 1 Character</label>
             <br>
@@ -126,7 +150,7 @@
 
 
             <!-- list all weapons -->
-            <input id="greataxe" type="hidden" name="GreatAxe" value="blahblahgreataxe"/>
+            <!-- <input id="greataxe" type="hidden" name="GreatAxe" value="blahblahgreataxe"/>
 
            <p id="classEquipmentIntro">
                 Choose the following equipment.
@@ -139,9 +163,10 @@
                 Two handaxes (or) any simple weapon
             </p>
             <p id="selectClassEquip">Selecting class equipment text here</p>
-
-            <input type="submit" value="Enter">
-        </form>
+        -->
+            <button type="submit" value="Enter">Enter</button>
+        </section>
+        </form> 
 
 
 
@@ -154,19 +179,19 @@
 
     <!-- JS HERE  -->
     <script type="text/javascript">
-        document.write("Testing script tag");
-        function msg() {             // works
-            document.write("this is the index.html fn")
-        }
-        function copyText() {
-            var copytext = document.getElementById("greataxe").value;
+        // // document.write("Testing script tag");
+        // function msg() {             // works
+        //     document.write("this is the index.html fn")
+        // }
+        // function copyText() {
+        //     var copytext = document.getElementById("greataxe").value;
 
-            copyText.s
-            copytext.select();
-            copytext.setSelectionRange(0, 99999)
-            document.execCommand("copy");
+        //     copyText.s
+        //     copytext.select();
+        //     copytext.setSelectionRange(0, 99999)
+        //     document.execCommand("copy");
 
-        }
+        // }
 
         function racialStatInc() {
             var race = document.getElementById("cRaceID").value
