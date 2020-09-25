@@ -71,50 +71,101 @@
                         </optgroup>
                     </select>
             <br>
-            Class: 
+            Class:  <select id="cClassID" name="cClass" onchange="classEffects()">
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Cleric">Cleric</option>
+                        <option value="Druid">Druid</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Paladin">Paladin</option>
+                        <option value="Ranger">Ranger</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Warlock">Warlock</option>
+                        <option value="Wizard">Wizard</option>
+                    </select>
             <br>
-            Owner: 
+            Owner: <input type="text" name="cOwner" placeholder="Enter player's Name :" required>
             <br>
             <!-- HP -->
+            <input id="HPID" type="hidden" name="cHP"/>
+
             <!-- maxHP -->
+            <input id="MaxHPID" type="hidden" name="cMaxHP"/>
+
             <!-- speed -->
-            <!-- xp -->
-            <!-- level -->
-
-
-            
-            <input type="hidden" name="cXP" value=0 />
-            <input type="hidden" name="cLevel" value=1 />
-            <input type="hidden" name="cHitDice" value=1 />
-            <input type="hidden" name="cProficiencyBonus" value=2 />
-            <br>
-            <input type="text" name="cOwner" placeholder="Enter player's Name :" required>
-            <br>
-            
-
-            
-            <br>
-
             <input id="spdID" type="hidden" name="cSpeed"/>
+
+            <!-- xp -->
+            <input type="hidden" name="cXP" value=0 />
+
+            <!-- level -->
+            <input type="hidden" name="cLevel" value=1 />
+
+            <!-- movecap -->
+            <input id="cMoveID" type="hidden" name="cMoveCapacity"/>
+
+            <!-- cCarryCapacity -->
+            <input id="cCarryID" type="hidden" name="cCarryCapacity"/>
+
+            <!-- carryld -->
+            <input type="hidden" name="cCarryLoad" value=0 />
+
+            <!-- cHitDice -->
+            <input type="hidden" name="cHitDice" value=1 />
+
+            <!-- cHitDieType -->
+            <input id="hitdieID" type="hidden" name="cHitDieType"/>
+
+            <!-- cProficiencyBonus -->
+            <input type="hidden" name="cProficiencyBonus" value=2 />
+
+            <!-- cInitMod -->
+            <input id="initModID" type="hidden" name="cInitMod"/>
+
+            <!-- pp -->
+
+            <!-- stats -->
+            <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
+            <input id="strModIP" type="hidden" name="cStats.Strength.Mod"/>
+            
+            <input id="dexIP" type="hidden" name="cStats.Dexterity.Value"/>
+            <input id="dexModIP" type="hidden" name="cStats.Dexterity.Mod"/>
+            
+            <input id="conIP" type="hidden" name="cStats.Constitution.Value"/>
+            <input id="conModIP" type="hidden" name="cStats.Constitution.Mod"/>
+
+            <input id="intIP" type="hidden" name="cStats.Intelligence.Value"/>
+            <input id="intModIP" type="hidden" name="cStats.Intelligence.Mod"/>
+            
+            <input id="wisIP" type="hidden" name="cStats.Wisdom.Value"/>
+            <input id="wisModIP" type="hidden" name="cStats.Wisdom.Mod"/>
+            
+            <input id="chaIP" type="hidden" name="cStats.Charisma.Value"/>
+            <input id="chaModIP" type="hidden" name="cStats.Charisma.Mod"/>
+
+            <!-- coin  -->
+
+            <!-- inventory, weapons, spells -->
+
+
+
+
+            
+            
+            
+            
+    
+            
+
+            
+            
             <p id="statprint"></p>
             
-            <select id="cClassID" name="cClass" onchange="classEffects()">
-                <option value="Barbarian">Barbarian</option>
-                <option value="Bard">Bard</option>
-                <option value="Cleric">Cleric</option>
-                <option value="Druid">Druid</option>
-                <option value="Fighter">Fighter</option>
-                <option value="Monk">Monk</option>
-                <option value="Paladin">Paladin</option>
-                <option value="Ranger">Ranger</option>
-                <option value="Rogue">Rogue</option>
-                <option value="Sorcerer">Sorcerer</option>
-                <option value="Warlock">Warlock</option>
-                <option value="Wizard">Wizard</option>
-            </select>
-            <br>
+            
 
-            <input id="hitdieID" type="hidden" name="cHitDieType"/>
+            
 
 
             <!-- accept base stats -->
@@ -136,30 +187,10 @@
                 <br>
 
 
-            <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
-            <input id="strModIP" type="hidden" name="cStats.Strength.Mod"/>
-            <input id="dexIP" type="hidden" name="cStats.Dexterity.Value"/>
-            <input id="dexModIP" type="hidden" name="cStats.Dexterity.Mod"/>
-            <input id="conIP" type="hidden" name="cStats.Constitution.Value"/>
-            <input id="conModIP" type="hidden" name="cStats.Constitution.Mod"/>
-
-            <input id="intIP" type="hidden" name="cStats.Intelligence.Value"/>
-            <input id="intModIP" type="hidden" name="cStats.Intelligence.Mod"/>
-            <input id="wisIP" type="hidden" name="cStats.Wisdom.Value"/>
-            <input id="wisModIP" type="hidden" name="cStats.Wisdom.Mod"/>
-            <input id="chaIP" type="hidden" name="cStats.Charisma.Value"/>
-            <input id="chaModIP" type="hidden" name="cStats.Charisma.Mod"/>
-
-            <input id="cMoveID" type="hidden" name="cMoveCapacity"/>
-            <input id="cCarryID" type="hidden" name="cCarryCapacity"/>
-
+            
 
             <p id="statprint3"></p>
 
-            <input id="initModID" type="hidden" name="cInitMod"/>
-
-            <input id="HPID" type="hidden" name="cHP"/>
-            <input id="MaxHPID" type="hidden" name="cMaxHP"/>
 
 
             <!-- list all weapons -->
@@ -294,48 +325,6 @@
                 document.getElementById("hitdieID").value = "d10";
             }
 
-            // obtaining starting equipment for class
-            if (cClass == "Barbarian") {
-                document.getElementById("selectClassWeapon").innerHTML 
-                = "A greataxe (or) any martial melee weapon <br>"+
-                " Two handaxes (or) any simple weapon";
-
-                document.getElementById("selectClassEquip").innerHTML
-                = ""
-            }
-            else if (cClass == "Bard" ) {
-                
-            }
-            else if (cClass == "Cleric") {
-
-            }
-            else if (cClass == "Druid"  ) {
-                
-            }
-            else if (cClass == "Fighter" ) {
-
-            }
-            else if (cClass == "Monk" ) {
-
-            }
-            else if (cClass == "Paladin" ) {
-
-            }
-            else if (cClass == "Ranger") {
-
-            }
-            else if ( cClass == "Rogue") {
-
-            }
-            else if (cClass == "Sorcerer") {
-                
-            }
-            else if (cClass == "Warlock" ) {
-
-            }
-            else if (cClass == "Wizard") {
-
-            }
         }
 
 
