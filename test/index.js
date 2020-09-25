@@ -22,71 +22,73 @@ global.Promise;mongoose.connect("mongodb://localhost:27017/DnDDatabase");
 
 // specify the schema
 var characterSchema = new mongoose.Schema({
-    // cInfo
-    cName: String,      // done
-    cRace: String,      // done
-    cClass: String,      // done
-    cOwner: String,      // done
-    // cStats
-    cXP: Number,      // done
-    cLevel: Number,      // done
-    
-    cHP: Number,      // done
-    cMaxHP: Number,      // done
-    
-    cSpeed: Number,     // done
-    cMoveCapacity: Number,      // done
-    cCarryCapacity: Number,      // done
-    cCarryLoad: Number, 
+        // cInfo
+        cName: String,      // done
+        cRace: String,      // done
+        cClass: String,      // done
+        cOwner: String,      // done
+        // cStats
+        cXP: Number,      // done
+        cLevel: Number,      // done
+        
+        cHP: Number,      // done
+        cMaxHP: Number,      // done
+        
+        cSpeed: Number,     // done
+        cMoveCapacity: Number,      // done
+        cCarryCapacity: Number,      // done
+        cCarryLoad: Number, 
 
-    cHitDice: Number,      // done
-    cHitDieType: String,      // done
-    cProficiencyBonus: Number,      // done
-    cInitMod: Number,       // done
-    cPassivePerception: Number,     // done
+        cHitDice: Number,      // done
+        cHitDieType: String,      // done
+        cProficiencyBonus: Number,      // done
+        cInitMod: Number,       // done
+        cPassivePerception: Number,     // done
 
-    cStats: {                           // done
-        Strength: {
-            Value: Number,
-            Mod: Number
+        cStats: {                           // done
+            Strength: {
+                Value: Number,
+                Mod: Number
+            },
+            Dexterity: {
+                Value: Number,
+                Mod: Number
+            },
+            Constitution: {
+                Value: Number,
+                Mod: Number
+            },
+            Intelligence: {
+                Value: Number,
+                Mod: Number
+            },
+            Wisdom: {
+                Value: Number,
+                Mod: Number
+            },
+            Charisma: {
+                Value: Number,
+                Mod: Number
+            }
         },
-        Dexterity: {
-            Value: Number,
-            Mod: Number
-        },
-        Constitution: {
-            Value: Number,
-            Mod: Number
-        },
-        Intelligence: {
-            Value: Number,
-            Mod: Number
-        },
-        Wisdom: {
-            Value: Number,
-            Mod: Number
-        },
-        Charisma: {
-            Value: Number,
-            Mod: Number
-        }
-    },
-    cCoins: Number,
-    cInventory: [
-        {
-            iName: String,
-            iDescription: String,
-            iWeight: Number,
-            iQty: Number
-        }
-    ],
-    cWeapons: [{
-        wName: String,
-        wDescription: String,
-        wDamage: String,
-        wToHit: Number,
-    }]
-   }, {
+        cCoins: Number,
+        cInventory: [
+            {
+                iName: String,
+                iDescription: String,
+                iWeight: Number,
+                iQty: Number
+            }
+        ],
+        cWeapons: [{
+            wName: String,
+            wDescription: String,
+            wDamage: String,
+            wToHit: Number,
+        }],
+        cSpells: [Number]
+   }, 
+   {
     versionKey: false
    },
    {
