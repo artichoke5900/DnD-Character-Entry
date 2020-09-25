@@ -1,17 +1,24 @@
 var express = require("express");
+var path = require('path');
 var app = express();
-var port = 3000;
+var port = 5500;
+
+var __dirname = "C:/Users/aarth/Documents/mongo/students/test";
 // module to allow passing data in the body to the server, as well as 
 // converting to json format
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+// app.use(express.static(__dirname ));
+
+
+
 
 
 // connecting to the db
 var mongoose = require("mongoose");
 mongoose.Promise =
-global.Promise;mongoose.connect("mongodb://localhost:27017/dnd_demo");
+global.Promise;mongoose.connect("mongodb://localhost:27017/DnDDatabase");
 
 // specify the schema
 var characterSchema = new mongoose.Schema({
@@ -24,20 +31,21 @@ var characterSchema = new mongoose.Schema({
     cXP: Number,      // done
     cLevel: Number,      // done
     
-    cHP: Number,
-    cMaxHP: Number,
+    cHP: Number,      // done
+    cMaxHP: Number,      // done
     
-    cSpeed: Number,
+    cSpeed: Number,     // done
     cMoveCapacity: Number,      // done
     cCarryCapacity: Number,      // done
+    cCarryLoad: Number, 
 
     cHitDice: Number,      // done
     cHitDieType: String,      // done
     cProficiencyBonus: Number,      // done
-    cInitMod: Number,
-    cPassivePerception: Number,
+    cInitMod: Number,       // done
+    cPassivePerception: Number,     // done
 
-    cStats: {
+    cStats: {                           // done
         Strength: {
             Value: Number,
             Mod: Number
@@ -64,12 +72,14 @@ var characterSchema = new mongoose.Schema({
         }
     },
     cCoins: Number,
-    cInventory: [{
-        iName: String,
-        iDescription: String,
-        iWeight: Number,
-        iQty: Number
-    }],
+    cInventory: [
+        {
+            iName: String,
+            iDescription: String,
+            iWeight: Number,
+            iQty: Number
+        }
+    ],
     cWeapons: [{
         wName: String,
         wDescription: String,
@@ -78,17 +88,22 @@ var characterSchema = new mongoose.Schema({
     }]
    }, {
     versionKey: false
+   },
+   {
+       collection: 'Characters_'
    }
    );
 
 // creating a model from the schema
-var Character = mongoose.model("Character", characterSchema);
+var Character = mongoose.model("Characters_", characterSchema, "Characters_");
 
 // 'reading' endpoint
         
 app.get("/", (req, res) => {
     // res.send("Hello World:");
+    // res.render('ejsfile')
     res.sendFile( "C:/Users/aarth/Documents/mongo/students/test/index.html")
+    // res.render('header.ejs')
 });
 
 app.get("/selectrace", (req, res) => {
@@ -96,20 +111,27 @@ app.get("/selectrace", (req, res) => {
     res.sendFile( "C:/Users/aarth/Documents/mongo/students/test/selectrace.html")
 });
 
+// app.get("/stylesheet.css", (req, res) => {
+//     // res.send("Hello World:");
+//     res.sendFile( "C:/Users/aarth/Documents/mongo/students/test/stylesheet.css")
+// });
+
 // app.post("/selectrace.html", (req, res) => {
-//     // // making a new instance of the model
-//     // var myData = new Character(req.body);
-//     // myData.save()
-//     // .then(item => {
-//     //     res.send("Item saved to database");
-//     // })
-//     // .catch(err => {
-//     //     res.status(400).send("Unable to save to database");
-//     // });
+//     // making a new instance of the model
+//     var myData = new Character(req.body);
+//     myData.save()
+//     .then(item => {
+//         res.send("Item saved to database");
+//     })
+//     .catch(err => {
+//         res.status(400).send("Unable to save to database");
+//     });
 // });
 
 // 'creating' endpoint
 app.post("/add", (req, res) => {
+    // res.render("Hello World:");
+
     // making a new instance of the model
     var myData = new Character(req.body);
     myData.save()
