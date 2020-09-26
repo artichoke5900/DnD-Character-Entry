@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <meta charset="utf-8"/> -->
         <title>Create A Level 1 Character</title>
-        <script>        // works
-        //     function msg() {
-        //     document.write("this is the index.html fn")
-        // }
-        </script>
-
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" type="text/css" href="/public/style.css"> -->
-
-        <!-- doesnt work -->
-        <!-- <script type="text/javascript" src="test/app.js"></script> -->
     </head>
 
     <style>
@@ -44,9 +34,9 @@
             <label>Create A Level 1 Character</label>
             <br>
             <br>
-            Name: <input type="text" name="cName" placeholder="Enter character name :" required>
+            Name: <input type="text" name="Name" placeholder="Enter character name :" required>
             <br>
-            Race:   <select id="cRaceID" name="cRace" placeholder="Enter race :" onchange="racialStatInc()">
+            Race:   <select id="cRaceID" name="Race" placeholder="Enter race :" onchange="racialStatInc()">
                         <option value="Human">Human</option>  
                         <option value="Tiefling">Tiefling</option>
                         <option value="Half-Orc">Half-Orc</option>
@@ -71,7 +61,7 @@
                         </optgroup>
                     </select>
             <br>
-            Class:  <select id="cClassID" name="cClass" onchange="classEffects()">
+            Class:  <select id="cClassID" name="Class" onchange="classEffects()">
                         <option value="Barbarian">Barbarian</option>
                         <option value="Bard">Bard</option>
                         <option value="Cleric">Cleric</option>
@@ -86,65 +76,65 @@
                         <option value="Wizard">Wizard</option>
                     </select>
             <br>
-            Owner: <input type="text" name="cOwner" placeholder="Enter player's Name :" required>
+            Owner: <input type="text" name="Owner" placeholder="Enter player's Name :" required>
             <br>
             <!-- HP -->
-            <input id="HPID" type="hidden" name="cHP"/>
+            <input id="HPID" type="hidden" name="HP"/>
 
             <!-- maxHP -->
-            <input id="MaxHPID" type="hidden" name="cMaxHP"/>
+            <input id="MaxHPID" type="hidden" name="MaxHP"/>
 
             <!-- speed -->
-            <input id="spdID" type="hidden" name="cSpeed"/>
+            <input id="spdID" type="hidden" name="Speed"/>
 
             <!-- xp -->
-            <input type="hidden" name="cXP" value=0 />
+            <input type="hidden" name="XP" value=0 />
 
             <!-- level -->
-            <input type="hidden" name="cLevel" value=1 />
+            <input type="hidden" name="Level" value=1 />
 
             <!-- movecap -->
-            <input id="cMoveID" type="hidden" name="cMoveCapacity"/>
+            <input id="cMoveID" type="hidden" name="MoveCapacity"/>
 
             <!-- cCarryCapacity -->
-            <input id="cCarryID" type="hidden" name="cCarryCapacity"/>
+            <input id="cCarryID" type="hidden" name="CarryCapacity"/>
 
             <!-- carryld -->
-            <input type="hidden" name="cCarryLoad" value=0 />
+            <input type="hidden" name="CarryLoad" value=0 />
 
             <!-- cHitDice -->
-            <input type="hidden" name="cHitDice" value=1 />
+            <input type="hidden" name="HitDice" value=1 />
 
             <!-- cHitDieType -->
-            <input id="hitdieID" type="hidden" name="cHitDieType"/>
+            <input id="hitdieID" type="hidden" name="HitDieType"/>
 
             <!-- cProficiencyBonus -->
-            <input type="hidden" name="cProficiencyBonus" value=2 />
+            <input type="hidden" name="ProficiencyBonus" value=2 />
 
             <!-- cInitMod -->
-            <input id="initModID" type="hidden" name="cInitMod"/>
+            <input id="initModID" type="hidden" name="InitMod"/>
 
             <!-- pp -->
-            <input id="ppID" type="hidden" name="cPassivePerception"/>
+            <input id="ppID" type="hidden" name="PassivePerception"/>
 
             <!-- stats -->
-            <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
-            <input id="strModIP" type="hidden" name="cStats.Strength.Mod"/>
+            <input id="strIP" type="hidden" name="Stats.Strength.Value"/>
+            <input id="strModIP" type="hidden" name="Stats.Strength.Mod"/>
             
-            <input id="dexIP" type="hidden" name="cStats.Dexterity.Value"/>
-            <input id="dexModIP" type="hidden" name="cStats.Dexterity.Mod"/>
+            <input id="dexIP" type="hidden" name="Stats.Dexterity.Value"/>
+            <input id="dexModIP" type="hidden" name="Stats.Dexterity.Mod"/>
             
-            <input id="conIP" type="hidden" name="cStats.Constitution.Value"/>
-            <input id="conModIP" type="hidden" name="cStats.Constitution.Mod"/>
+            <input id="conIP" type="hidden" name="Stats.Constitution.Value"/>
+            <input id="conModIP" type="hidden" name="Stats.Constitution.Mod"/>
 
-            <input id="intIP" type="hidden" name="cStats.Intelligence.Value"/>
-            <input id="intModIP" type="hidden" name="cStats.Intelligence.Mod"/>
+            <input id="intIP" type="hidden" name="Stats.Intelligence.Value"/>
+            <input id="intModIP" type="hidden" name="Stats.Intelligence.Mod"/>
             
-            <input id="wisIP" type="hidden" name="cStats.Wisdom.Value"/>
-            <input id="wisModIP" type="hidden" name="cStats.Wisdom.Mod"/>
+            <input id="wisIP" type="hidden" name="Stats.Wisdom.Value"/>
+            <input id="wisModIP" type="hidden" name="Stats.Wisdom.Mod"/>
             
-            <input id="chaIP" type="hidden" name="cStats.Charisma.Value"/>
-            <input id="chaModIP" type="hidden" name="cStats.Charisma.Mod"/>
+            <input id="chaIP" type="hidden" name="Stats.Charisma.Value"/>
+            <input id="chaModIP" type="hidden" name="Stats.Charisma.Mod"/>
 
             <!-- accept base stats -->
             <br><br>
@@ -165,7 +155,7 @@
                 <br>
 
             <!-- coin  -->
-            <input type="hidden" name="cCoins" value=0 />
+            <input type="hidden" name="Coins" value=0 />
 
             <!-- inventory, weapons, spells -->
 
@@ -173,23 +163,6 @@
             
             <p id="statprint3"></p>
 
-
-
-            <!-- list all weapons -->
-            <!-- <input id="greataxe" type="hidden" name="GreatAxe" value="blahblahgreataxe"/>
-
-           <p id="classEquipmentIntro">
-                Choose the following equipment.
-                <br>
-                Click to copy the command to log each piece of equipment in discord.
-            </p>
-            <p id="selectClassWeapon">
-                A greataxe <button type="button" onclick="copyText()">Copy</button> any martial melee weapon 
-                <br>
-                Two handaxes (or) any simple weapon
-            </p>
-            <p id="selectClassEquip">Selecting class equipment text here</p>
-        -->
             <button type="submit" value="Enter">Enter</button>
         </section>
         </form> 
@@ -205,25 +178,9 @@
 
     <!-- JS HERE  -->
     <script type="text/javascript">
-        // // document.write("Testing script tag");
-        // function msg() {             // works
-        //     document.write("this is the index.html fn")
-        // }
-        // function copyText() {
-        //     var copytext = document.getElementById("greataxe").value;
-
-        //     copyText.s
-        //     copytext.select();
-        //     copytext.setSelectionRange(0, 99999)
-        //     document.execCommand("copy");
-
-        // }
-
-        function racialStatInc() {
+            function racialStatInc() {
             var race = document.getElementById("cRaceID").value
-            // document.getElementById("demo").innerHTML = race;
-                // works
-
+    
             if (race == "Human") {
                 str=1; dex=1; con=1; int=1; wis=1; cha=1;
                 document.getElementById("spdID").value = parseInt(30);
@@ -408,7 +365,5 @@
 
     </script>
 
-    <!-- doesnt work -->
-    <!-- <script type="text/javascript" lang="javascript"  src="./app.js" charset="utf-8"></script> -->
     </body>
 </html>
