@@ -23,29 +23,29 @@ global.Promise;mongoose.connect("mongodb://localhost:27017/DnDDatabase");
 // specify the schema
 var characterSchema = new mongoose.Schema({
         // cInfo
-        cName: String,      // done
-        cRace: String,      // done
-        cClass: String,      // done
-        cOwner: String,      // done
+        Name: String,      // done
+        Race: String,      // done
+        Class: String,      // done
+        Owner: String,      // done
         // cStats
-        cXP: Number,      // done
-        cLevel: Number,      // done
+        XP: Number,      // done
+        Level: Number,      // done
         
-        cHP: Number,      // done
-        cMaxHP: Number,      // done
+        HP: Number,      // done
+        MaxHP: Number,      // done
         
-        cSpeed: Number,     // done
-        cMoveCapacity: Number,      // done
-        cCarryCapacity: Number,      // done
-        cCarryLoad: Number, 
+        Speed: Number,     // done
+        MoveCapacity: Number,      // done
+        CarryCapacity: Number,      // done
+        CarryLoad: Number, 
 
-        cHitDice: Number,      // done
-        cHitDieType: String,      // done
-        cProficiencyBonus: Number,      // done
-        cInitMod: Number,       // done
-        cPassivePerception: Number,     // done
+        HitDice: Number,      // done
+        HitDieType: String,      // done
+        ProficiencyBonus: Number,      // done
+        InitMod: Number,       // done
+        PassivePerception: Number,     // done
 
-        cStats: {                           // done
+        Stats: {                           // done
             Strength: {
                 Value: Number,
                 Mod: Number
@@ -71,22 +71,21 @@ var characterSchema = new mongoose.Schema({
                 Mod: Number
             }
         },
-        cCoins: Number,
-        cInventory: [
+        Coins: Number,
+        Inventory: [
             {
-                iName: String,
-                iDescription: String,
-                iWeight: Number,
-                iQty: Number
+                Name: String,
+                Description: String,
+                Weight: Number
             }
         ],
-        cWeapons: [{
-            wName: String,
-            wDescription: String,
-            wDamage: String,
-            wToHit: Number,
+        Weapons: [{
+            Name: String,
+            Description: String,
+            Damage: String,
+            ToHit: Number,
         }],
-        cSpells: [Number]
+        Spells: [ {Name: String} ],
    }, 
    {
     versionKey: false
