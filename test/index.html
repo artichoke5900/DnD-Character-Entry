@@ -125,6 +125,7 @@
             <input id="initModID" type="hidden" name="cInitMod"/>
 
             <!-- pp -->
+            <input id="ppID" type="hidden" name="cPassivePerception"/>
 
             <!-- stats -->
             <input id="strIP" type="hidden" name="cStats.Strength.Value"/>
@@ -145,29 +146,6 @@
             <input id="chaIP" type="hidden" name="cStats.Charisma.Value"/>
             <input id="chaModIP" type="hidden" name="cStats.Charisma.Mod"/>
 
-            <!-- coin  -->
-
-            <!-- inventory, weapons, spells -->
-
-
-
-
-            
-            
-            
-            
-    
-            
-
-            
-            
-            <p id="statprint"></p>
-            
-            
-
-            
-
-
             <!-- accept base stats -->
             <br><br>
             <label>Arrange the numbers 8, 10, 11, 12, 14 and 15 amongst your stats :</label>
@@ -186,9 +164,13 @@
                 <input id="chaBaseId" oninput="chaSet()" type="number" name="chaBase" placeholder="Enter Charisma :" required>
                 <br>
 
+            <!-- coin  -->
+            <input type="hidden" name="cCoins" value=0 />
 
+            <!-- inventory, weapons, spells -->
+
+            <p id="statprint"></p>
             
-
             <p id="statprint3"></p>
 
 
